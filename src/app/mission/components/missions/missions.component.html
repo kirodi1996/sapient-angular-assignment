@@ -1,0 +1,77 @@
+<div class="container main-wrapper">
+    <div class="row mb-40">
+        <div class="col-lg-12">
+            <h2 class="heading">SpacEx Launch Programs</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-2 col-sm-3 col-12 padding-10">
+            <app-filter (filtersChange)="getMissions()"></app-filter>
+        </div>
+        <div class="col-lg-10 col-sm-9 col-12 padding-10">
+            <div class="row mission-container" *ngIf="missions.length else emptyTable">
+                <div class="col-lg-3 col-sm-6 col-12 padding-left-5 padding-right-5"
+                    *ngFor="let mission of missions| paginate: { itemsPerPage: 20, currentPage: currentPage,totalItems:totalItems }">
+                    <div class=mission-wrapper>
+                        <div class="mission-img">
+                            <img [src]="mission?.links?.mission_patch" alt="image" class="img-content">
+                        </div>
+                        <div class="mission-info">
+
+                            <div class="mission-name">
+                                {{mission.mission_name}}
+                                #{{mission.flight_number}}
+                            </div>
+                            <div class="info-text">
+                                <div class="info-key">
+                                    Mission Ids:
+                                </div>
+                                <div class="info-value">
+                                    {{mission.mission_id}}
+                                </div>
+                            </div>
+                            <div class="info-text">
+                                <div class="info-key">
+                                    Launch Year:
+                                </div>
+                                <div class="info-value">
+                                    {{mission.launch_year}}
+                                </div>
+                            </div>
+                            <div class="info-text">
+                                <div class="info-key">
+                                    Successful Launch:
+                                </div>
+                                <div class="info-value">
+                                    {{mission.launch_success}}
+                                </div>
+                            </div>
+                            <div class="info-text">
+                                <div class="info-key">
+                                    Successful Landing:
+                                </div>
+                                <div class="info-value">
+                                    {{mission.launch_landing}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="row mission-container">
+                <pagination-controls (pageChange)="pageChange($event)"></pagination-controls>
+            </div> -->
+            <ng-template #emptyTable>No Items</ng-template>
+
+        </div>
+        <div class="loading" *ngIf="loading">
+            <img id="loading-image" src="../../../../assets/loading.gif" alt="Loading..." />
+        </div>
+    </div>
+
+    <div class="row pb-20 pt-20">
+        <div class="col-lg-12 text-center">
+            <h5 class="heading">Developed by: Rishabh Kirodiwal</h5>
+        </div>
+    </div>
+</div>

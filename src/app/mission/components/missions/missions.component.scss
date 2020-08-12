@@ -1,0 +1,83 @@
+$bg-color: #ececec;
+$blue-color: #283f77;
+
+.main-wrapper {
+  background-color: $bg-color;
+
+  .mb-40 {
+    margin-bottom: 40px;
+  }
+
+  .heading {
+    font-weight: bold;
+  }
+  .selected-filters-wrapper {
+    display: flex;
+    margin-top: 12px;
+
+    .selected-filters {
+      border: 1px solid #cecece;
+      border-radius: 5px;
+      background-color: #9e9e9e;
+      color: #fff;
+      font-size: 14px;
+      padding: 2px 8px;
+      margin-right: 5px;
+
+      button {
+        background: transparent;
+        border: none;
+        color: #fff;
+      }
+    }
+  }
+
+  .mission-container {
+    margin: 0px;
+    .mission-wrapper {
+      margin-bottom: 10px;
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 15px;
+      .mission-img {
+        position: relative;
+        background-color: $bg-color;
+
+        .img-content {
+          border-radius: 10px 10px 0px 0px;
+          width: 100%;
+          height: auto;
+        }
+
+      }
+
+      .mission-info {
+        padding-top: 10px;
+        min-height: 160px;
+
+        
+        .mission-name {
+          font-size: 16px;
+          font-weight: bold;
+          color: $blue-color;
+        }
+
+        .info-text {
+          display: flex;
+          padding: 5px 0px;
+
+          .info-key {
+            font-size: 14px;
+            font-weight: bold;
+          }
+          .info-value {
+            padding-left: 5px;
+            color:$blue-color;
+            text-align: right;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}
