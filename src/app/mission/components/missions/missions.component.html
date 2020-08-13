@@ -14,7 +14,9 @@
                     *ngFor="let mission of missions| paginate: { itemsPerPage: 20, currentPage: currentPage,totalItems:totalItems }">
                     <div class=mission-wrapper>
                         <div class="mission-img">
-                            <img [src]="mission?.links?.mission_patch" alt="image" class="img-content">
+                            <img *ngIf="mission?.links?.mission_patch_small" [src]="mission?.links?.mission_patch"  class="img-content">
+                            <img *ngIf="!mission?.links?.mission_patch" src='./../../../../assets/default-image.jpg' alt="image-not-found" class="img-content">
+
                         </div>
                         <div class="mission-info">
 

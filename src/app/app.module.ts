@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { FilterComponent } from './mission/components/filter/filter.component';
+import { MissionsModule } from './mission/missions.module';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,9 @@ import { FilterComponent } from './mission/components/filter/filter.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    MissionsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
